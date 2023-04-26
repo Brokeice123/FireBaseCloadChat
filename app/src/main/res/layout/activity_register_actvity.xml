@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="40dp"
+    tools:context=".RegisterActvity">
+
+    <EditText
+        android:id="@+id/edtfullnamereg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="text"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="100dp"
+        android:hint="Enter Full Name"/>
+
+    <EditText
+        android:id="@+id/edtemailreg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="180dp"
+        android:inputType="textEmailAddress"
+        android:hint="Enter Email"
+        />
+
+    <EditText
+        android:id="@+id/edtpassreg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="260dp"
+        android:inputType="textPassword"
+        android:hint="Enter Password"
+        />
+
+    <Button
+        android:id="@+id/btncreateaccount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="CREATE ACCOUNT"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="340dp"
+        />
+</RelativeLayout>

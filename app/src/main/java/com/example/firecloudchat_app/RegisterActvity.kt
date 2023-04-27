@@ -1,7 +1,10 @@
 package com.example.firecloudchat_app
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
+import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
@@ -12,7 +15,7 @@ class RegisterActvity : AppCompatActivity() {
     lateinit var regFullname:EditText
     lateinit var regEmail:EditText
     lateinit var regPassword:EditText
-    lateinit var regCreateAcc:EditText
+    lateinit var regCreateAcc:Button
 
     //Initialise Firebase
     lateinit var auth: FirebaseAuth
@@ -42,7 +45,13 @@ class RegisterActvity : AppCompatActivity() {
                 auth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(this){
                     if (it.isSuccessful){
                         Toast.makeText(this, "User Created Successfully", Toast.LENGTH_SHORT).show()
+
+                        var gotologin = Intent(this, LoginAtivity::class.java)
+                        startActivity(gotologin)
                     } else{
+
+                        Log.d("TAG", "Error---->", it.exception)
+
                         Toast.makeText(this, "Failed to Create Account", Toast.LENGTH_SHORT).show()
                     }
                 }

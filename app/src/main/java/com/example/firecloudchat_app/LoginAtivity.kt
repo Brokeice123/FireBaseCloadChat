@@ -53,7 +53,9 @@ class LoginAtivity : AppCompatActivity() {
         }
 
         mbtnRegister.setOnClickListener {
-
+            var gotoregister = Intent(this, RegisterActvity::class.java)
+            startActivity(gotoregister)
+            finish()
         }
 
 

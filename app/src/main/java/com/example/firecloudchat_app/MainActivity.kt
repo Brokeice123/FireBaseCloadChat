@@ -44,7 +44,18 @@ class MainActivity : AppCompatActivity() {
                 Toast.makeText(this, "Cannot Submit an Empty Field", Toast.LENGTH_SHORT).show()
             } else{
                //Saving Info to FireBase DataBase
-
+                var usercar = Car(carmake,carmodel,carprice)
+                
+                var ref = FirebaseDatabase.getInstance().getReference().child("cars")
+                
+                ref.setValue(usercar).addOnCompleteListener { 
+                    
+                    if (it.isSuccessful) {
+                        Toast.makeText(this, "Car Data Uploaded Successfully", Toast.LENGTH_SHORT).show()
+                    } else {
+                        Toast.makeText(this, "Failed to save Car Data", Toast.LENGTH_SHORT).show()
+                    }
+                }
             }
 
         }

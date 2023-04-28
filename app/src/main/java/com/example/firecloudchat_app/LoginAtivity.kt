@@ -11,14 +11,14 @@ import com.google.firebase.auth.FirebaseAuth
 import androidx.core.graphics.ColorUtils
 import android.view.WindowManager
 import android.widget.ImageView
+import android.widget.TextView
 
 class LoginAtivity : AppCompatActivity() {
 
     lateinit var mEmail:EditText
     lateinit var mPassword:EditText
     lateinit var mbtnLogin:ImageView
-    lateinit var mbtnRegister:Button
-    lateinit var btn:Button
+    lateinit var mRegister:TextView
     
     //Initialise Firebase
     lateinit var auth:FirebaseAuth
@@ -30,8 +30,8 @@ class LoginAtivity : AppCompatActivity() {
         mEmail = findViewById(R.id.edtEmail)
         mPassword = findViewById(R.id.edtPassword)
         mbtnLogin = findViewById(R.id.btnlogin)
-        mbtnRegister = findViewById(R.id.btnRegister)
-        btn = findViewById(R.id.button)
+        mRegister = findViewById(R.id.txtReg)
+
         
         auth = FirebaseAuth.getInstance()
 
@@ -58,7 +58,7 @@ class LoginAtivity : AppCompatActivity() {
 
         }
 
-        mbtnRegister.setOnClickListener {
+        mRegister.setOnClickListener {
             var gotoregister = Intent(this, RegisterActvity::class.java)
             startActivity(gotoregister)
             finish()

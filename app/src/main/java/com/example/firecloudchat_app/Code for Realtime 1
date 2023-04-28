@@ -1,0 +1,9 @@
+//initialise firebase
+        //var database = FirebaseDatabase.getInstance()
+        //var databaseRef = database.reference
+
+        //btn_save_data.setOnClickListener {
+
+            //var user_data = edt_user_inp.text.toString().trim()
+            //Toast.makeText(this, user_data, Toast.LENGTH_SHORT).show()
+            //databaseRef.setValue(user_data)

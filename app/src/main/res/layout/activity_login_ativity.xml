@@ -4,45 +4,71 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="40dp"
+    android:background="#ffffff"
     tools:context=".LoginAtivity">
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:srcCompat="@drawable/backgroung_login" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/top_background" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_height="wrap_content"
+        android:text="TextView" />
 
     <EditText
         android:id="@+id/edtEmail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textEmailAddress"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="100dp"
-        android:hint="Enter Email" />
+        android:drawableStart="@drawable/email"
+        android:textColorHint="#603a91"
+        android:drawablePadding="16dp"
+        android:ems="10"
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="40dp"
+        android:hint="Enter Email"
+        android:inputType="textEmailAddress" />
 
     <EditText
         android:id="@+id/edtPassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="Enter Password"
-        android:inputType="textPassword"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="180dp"
-        />
+        android:ems="10"
+        android:drawableStart="@drawable/password"
+        android:textColorHint="#603a91"
+        android:drawablePadding="16dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="40dp"
+        android:hint="Enter Password"
+        android:inputType="textPassword" />
 
     <Button
         android:id="@+id/btnLogin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="LOGIN"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="250dp"
-        />
+        android:layout_marginTop="380dp"
+        android:text="LOGIN" />
 
     <Button
         android:id="@+id/btnRegister"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="REGISTER"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="340dp"
-        />
+        android:layout_marginTop="440dp"
+        android:text="REGISTER" />
 </RelativeLayout>

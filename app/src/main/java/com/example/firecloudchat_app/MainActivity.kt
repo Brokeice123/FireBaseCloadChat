@@ -4,30 +4,28 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
-import android.widget.Toast
-import com.google.firebase.database.FirebaseDatabase
 
 class MainActivity : AppCompatActivity() {
 
-    lateinit var edt_user_inp:EditText
-    lateinit var btn_save_data:Button
+    lateinit var main_make:EditText
+    lateinit var main_model:EditText
+    lateinit var main_price:EditText
+    lateinit var main_photo:Button
+    lateinit var main_data:Button
+    lateinit var main_view:Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        edt_user_inp = findViewById(R.id.Edtname)
-        btn_save_data = findViewById(R.id.BtnSave)
+        main_make = findViewById(R.id.Edtcarmake)
+        main_model = findViewById(R.id.edtcarmodel)
+        main_price = findViewById(R.id.edtcarprice)
+        main_photo = findViewById(R.id.btn_photo)
+        main_data = findViewById(R.id.btn_data)
+        main_view = findViewById(R.id.btn_view)
 
-        //initialise firebase
-        var database = FirebaseDatabase.getInstance()
-        var databaseRef = database.reference
 
-        btn_save_data.setOnClickListener {
-
-            var user_data = edt_user_inp.text.toString().trim()
-            //Toast.makeText(this, user_data, Toast.LENGTH_SHORT).show()
-            databaseRef.setValue(user_data)
 
 
 
@@ -35,4 +33,3 @@ class MainActivity : AppCompatActivity() {
 
 
     }
-}

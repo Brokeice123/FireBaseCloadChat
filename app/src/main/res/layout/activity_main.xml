@@ -8,20 +8,56 @@
     tools:context=".MainActivity">
 
     <EditText
-        android:id="@+id/Edtname"
+        android:id="@+id/Edtcarmake"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="100dp"
-        android:hint="Enter Name" />
+        android:hint="Enter Car Make" />
 
-    <Button
-        android:id="@+id/BtnSave"
-        android:layout_width="wrap_content"
+    <EditText
+        android:id="@+id/edtcarmodel"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="180dp"
-        android:text="SAVE DATA" />
+        android:ems="10"
+        android:hint="Enter Car Model"
+        android:inputType="text" />
+
+    <EditText
+        android:id="@+id/edtcarprice"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="260dp"
+        android:ems="10"
+        android:hint="Enter Car Price"
+        android:inputType="number" />
+
+    <Button
+        android:id="@+id/btn_photo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="340dp"
+        android:text="UPLOAD CAR PHOTO" />
+
+    <Button
+        android:id="@+id/btn_data"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="400dp"
+        android:text="UPLOAD CAR DATA" />
+
+    <Button
+        android:id="@+id/btn_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="460dp"
+        android:text="VIEW UPLOADED CARS" />
 
 
 </RelativeLayout>

@@ -63,13 +63,26 @@
         android:hint="Enter Password"
         android:inputType="textPassword" />
 
-    <Button
-        android:id="@+id/btnLogin"
+    <ImageView
+        android:id="@+id/btnlogin"
         android:layout_width="wrap_content"
+
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="350dp"
+        app:srcCompat="@drawable/btn_login" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="420dp"
-        android:text="LOGIN" />
+        style="@android:style/Widget.Button"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:drawableStart="@drawable/google"
+        android:layout_marginTop="450dp"
+        android:text="Button" />
 
     <Button
         android:id="@+id/btnRegister"

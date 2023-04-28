@@ -10,13 +10,15 @@ import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
 import androidx.core.graphics.ColorUtils
 import android.view.WindowManager
+import android.widget.ImageView
 
 class LoginAtivity : AppCompatActivity() {
 
     lateinit var mEmail:EditText
     lateinit var mPassword:EditText
-    lateinit var mbtnLogin:Button
+    lateinit var mbtnLogin:ImageView
     lateinit var mbtnRegister:Button
+    lateinit var btn:Button
     
     //Initialise Firebase
     lateinit var auth:FirebaseAuth
@@ -27,16 +29,16 @@ class LoginAtivity : AppCompatActivity() {
 
         mEmail = findViewById(R.id.edtEmail)
         mPassword = findViewById(R.id.edtPassword)
-        mbtnLogin = findViewById(R.id.btnLogin)
+        mbtnLogin = findViewById(R.id.btnlogin)
         mbtnRegister = findViewById(R.id.btnRegister)
+        btn = findViewById(R.id.button)
         
         auth = FirebaseAuth.getInstance()
 
         mbtnLogin.setOnClickListener {
-            
             var email = mEmail.text.toString().trim()
             var password = mPassword.text.toString().trim()
-            
+
             //Validate Input
             if (email.isEmpty() || password.isEmpty()) {
                 Toast.makeText(this, "One of the inputs is empty", Toast.LENGTH_SHORT).show()
@@ -52,7 +54,8 @@ class LoginAtivity : AppCompatActivity() {
                     }
                 }
             }
-            
+
+
         }
 
         mbtnRegister.setOnClickListener {
@@ -67,6 +70,9 @@ class LoginAtivity : AppCompatActivity() {
         val blendedColor = ColorUtils.blendARGB(color1, color2, ratio)
 
         window.statusBarColor = blendedColor
+
+
+
 
     }
 }

@@ -47,7 +47,7 @@ class LoginAtivity : AppCompatActivity() {
                 auth.signInWithEmailAndPassword(email, password).addOnCompleteListener(this) {
                     if (it.isSuccessful){
                         Toast.makeText(this, "Login Successful", Toast.LENGTH_SHORT).show()
-                        var gotomain = Intent(this, MainActivity::class.java)
+                        var gotomain = Intent(this, Video_SplashActivity::class.java)
                         startActivity(gotomain)
                         finish()
                     } else{

@@ -15,6 +15,9 @@
         android:theme="@style/Theme.FireCloudChatApp"
         tools:targetApi="31">
         <activity
+            android:name=".Video_SplashActivity"
+            android:exported="false" />
+        <activity
             android:name=".SplashScreen"
             android:exported="true">
             <intent-filter>
@@ -28,14 +31,10 @@
             android:exported="false" />
         <activity
             android:name=".LoginAtivity"
-            android:exported="true">
-
-        </activity>
+            android:exported="true"></activity>
         <activity
             android:name=".MainActivity"
-            android:exported="true">
-
-        </activity>
+            android:exported="true"></activity>
 
         <meta-data
             android:name="preloaded_fonts"

@@ -1,9 +1,12 @@
 package com.example.firecloudchat_app
 
+import android.graphics.Color
+import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
+import android.widget.TextView
 import android.widget.Toast
 import com.google.firebase.database.FirebaseDatabase
 
@@ -13,9 +16,9 @@ class MainActivity : AppCompatActivity() {
     lateinit var main_model:EditText
     lateinit var main_price:EditText
 
-    lateinit var main_photo:Button
-    lateinit var main_data:Button
-    lateinit var main_view:Button
+    lateinit var main_photo:TextView
+    lateinit var main_data:TextView
+    lateinit var main_view:TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -58,6 +61,10 @@ class MainActivity : AppCompatActivity() {
                 }
             }
 
+        }
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            window.statusBarColor = Color.parseColor("#343434")
         }
 
         }

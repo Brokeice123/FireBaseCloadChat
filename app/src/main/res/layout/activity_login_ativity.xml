@@ -4,14 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#ffffff"
+    android:background="#343434"
     tools:context=".LoginAtivity">
 
     <ImageView
         android:id="@+id/imageView3"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:srcCompat="@drawable/backgroung_login" />
+        android:layout_height="match_parent" />
 
     <ImageView
         android:id="@+id/imageView4"
@@ -28,7 +27,7 @@
         android:fontFamily="@font/amita"
         android:text="Welcome Back"
         android:textStyle="bold"
-        android:textColor="#603a91"
+        android:textColor="#ffffff"
         android:textSize="30sp" />
 
     <EditText
@@ -38,10 +37,10 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="200dp"
         android:drawableStart="@drawable/email"
-        android:textColorHint="#603a91"
+        android:textColorHint="#ffffff"
         android:drawablePadding="16dp"
         android:ems="10"
-        android:textColor="#603a91"
+        android:textColor="#ffffff"
         android:layout_marginStart="40dp"
         android:layout_marginEnd="40dp"
         android:hint="Enter Email"
@@ -55,9 +54,9 @@
         android:layout_marginTop="300dp"
         android:ems="10"
         android:drawableStart="@drawable/password"
-        android:textColorHint="#603a91"
+        android:textColorHint="#ffffff"
         android:drawablePadding="16dp"
-        android:textColor="#603a91"
+        android:textColor="#ffffff"
         android:layout_marginStart="40dp"
         android:layout_marginEnd="40dp"
         android:hint="Enter Password"
@@ -90,7 +89,7 @@
         android:layout_marginEnd="40dp"
         android:paddingBottom="5dp"
         android:text="Sign in with Google"
-        android:textColor="#603a91"
+        android:textColor="#ffffff"
         android:textSize="20sp"
         android:textStyle="bold"
         />
@@ -112,7 +111,7 @@
         android:layout_marginStart="40dp"
         android:layout_marginEnd="40dp"
         android:text="Sign in with Facebook"
-        android:textColor="#603a91"
+        android:textColor="#ffffff"
         android:textSize="20sp"
         android:textStyle="bold"
         />
@@ -123,7 +122,7 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="600dp"
-        android:textColor="#603a91"
+        android:textColor="#E1A500"
         android:text="Are you a new User? Register" />
 
 </RelativeLayout>

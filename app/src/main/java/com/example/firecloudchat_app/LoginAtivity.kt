@@ -4,6 +4,7 @@ import android.content.Intent
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Build
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
@@ -64,12 +65,9 @@ class LoginAtivity : AppCompatActivity() {
             finish()
         }
 
-        val color1 = Color.parseColor("#80b98fd7") // Replace with your first color
-        val color2 = Color.parseColor("#60bbc9fc") // Replace with your second color
-        val ratio = 0.125f // Replace with the ratio calculated from your angle
-        val blendedColor = ColorUtils.blendARGB(color1, color2, ratio)
-
-        window.statusBarColor = blendedColor
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            window.statusBarColor = Color.parseColor("#343434")
+        }
 
 
 

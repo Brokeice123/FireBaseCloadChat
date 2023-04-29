@@ -1,11 +1,15 @@
 package com.example.firecloudchat_app
 
 import android.content.Intent
+import android.graphics.Color
+import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
 import android.widget.EditText
+import android.widget.ImageView
+import android.widget.TextView
 import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseAuthException
@@ -15,7 +19,8 @@ class RegisterActvity : AppCompatActivity() {
     lateinit var regFullname:EditText
     lateinit var regEmail:EditText
     lateinit var regPassword:EditText
-    lateinit var regCreateAcc:Button
+    lateinit var regCreateAcc:ImageView
+    lateinit var text_log:TextView
 
     //Initialise Firebase
     lateinit var auth: FirebaseAuth
@@ -30,6 +35,7 @@ class RegisterActvity : AppCompatActivity() {
         regEmail = findViewById(R.id.edtemailreg)
         regPassword = findViewById(R.id.edtpassreg)
         regCreateAcc = findViewById(R.id.btncreateaccount)
+        text_log = findViewById(R.id.txtLogin)
         
         auth = FirebaseAuth.getInstance()
 
@@ -59,6 +65,16 @@ class RegisterActvity : AppCompatActivity() {
 
         }
 
+
+        text_log.setOnClickListener {
+            var gotologin = Intent(this, LoginAtivity::class.java)
+            startActivity(gotologin)
+            finish()
+        }
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            window.statusBarColor = Color.parseColor("#343434")
+        }
 
     }
 }

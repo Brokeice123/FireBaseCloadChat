@@ -1,0 +1,71 @@
+class MainActivity : AppCompatActivity() {
+
+    private lateinit var makeEditText: EditText
+    private lateinit var modelEditText: EditText
+    private lateinit var priceEditText: EditText
+    private lateinit var photoButton: Button
+    private lateinit var uploadButton: Button
+    private lateinit var imageView: ImageView
+
+    private var imageByteArray: ByteArray? = null
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+
+        makeEditText = findViewById(R.id.make_edit_text)
+        modelEditText = findViewById(R.id.model_edit_text)
+        priceEditText = findViewById(R.id.price_edit_text)
+        photoButton = findViewById(R.id.photo_button)
+        uploadButton = findViewById(R.id.upload_button)
+        imageView = findViewById(R.id.image_view)
+
+        photoButton.setOnClickListener {
+            Intent(MediaStore.ACTION_IMAGE_CAPTURE).also { intent ->
+                intent.resolveActivity(packageManager)?.also {
+                    startActivityForResult(intent, REQUEST_IMAGE_CAPTURE)
+                }
+            }
+        }
+
+        uploadButton.setOnClickListener {
+            val make = makeEditText.text.toString()
+            val model = modelEditText.text.toString()
+            val price = priceEditText.text.toString()
+
+            val database = Firebase.database.reference
+            val carData = hashMapOf(
+                "make" to make,
+                "model" to model,
+                "price" to price,
+                "image" to Base64.encodeToString(imageByteArray, Base64.DEFAULT)
+            )
+
+            database.child("cars").push().setValue(carData)
+                .addOnSuccessListener {
+                    Toast.makeText(this, "Car data uploaded successfully", Toast.LENGTH_SHORT).show()
+                }
+                .addOnFailureListener {
+                    Toast.makeText(this, "Failed to upload car data", Toast.LENGTH_SHORT).show()
+                }
+        }
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+
+        if (requestCode == REQUEST_IMAGE_CAPTURE && resultCode == Activity.RESULT_OK) {
+            val imageBitmap = data?.extras?.get("data") as Bitmap
+            imageView.setImageBitmap(imageBitmap)
+
+            // Convert the Bitmap to a ByteArray
+            val stream = ByteArrayOutputStream()
+            imageBitmap.compress(Bitmap.CompressFormat.JPEG, 100, stream)
+            imageByteArray = stream.toByteArray()
+        }
+    }
+
+    companion object {
+        const val REQUEST_IMAGE_CAPTURE = 1
+    }
+}

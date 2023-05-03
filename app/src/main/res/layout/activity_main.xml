@@ -147,8 +147,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-
-
+        android:progressBarStyle="?android:attr/progressBarStyleHorizontal"
+        android:progressDrawable="@drawable/custom_progress_bar"
         android:layout_gravity="center"
         android:visibility="gone" />
 

@@ -8,9 +8,11 @@ import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.provider.MediaStore
+import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageView
+import android.widget.ProgressBar
 import android.widget.TextView
 import android.widget.Toast
 import com.google.firebase.database.FirebaseDatabase
@@ -21,6 +23,7 @@ class MainActivity : AppCompatActivity() {
     lateinit var main_model:EditText
     lateinit var main_price:EditText
     lateinit var imageView:ImageView
+    private lateinit var progressBar: ProgressBar
 
     lateinit var main_photo:TextView
     lateinit var main_data:TextView
@@ -38,6 +41,7 @@ class MainActivity : AppCompatActivity() {
         imageView = findViewById(R.id.image_view)
         main_data = findViewById(R.id.btn_data)
         main_view = findViewById(R.id.btn_view)
+        progressBar = findViewById(R.id.progressBar)
 
         //Initialise FireBase
         var database = FirebaseDatabase.getInstance()
@@ -45,6 +49,9 @@ class MainActivity : AppCompatActivity() {
 
 
         main_data.setOnClickListener {
+
+            progressBar.visibility = View.VISIBLE
+
             var carmake = main_make.text.toString().trim()
             var carmodel = main_model.text.toString().trim()
             var carprice = main_price.text.toString().trim()
@@ -62,8 +69,10 @@ class MainActivity : AppCompatActivity() {
                 ref.setValue(usercar).addOnCompleteListener { 
                     
                     if (it.isSuccessful) {
+                        progressBar.visibility = View.GONE
                         Toast.makeText(this, "Car Data Uploaded Successfully", Toast.LENGTH_SHORT).show()
                     } else {
+                        progressBar.visibility = View.GONE
                         Toast.makeText(this, "Failed to save Car Data", Toast.LENGTH_SHORT).show()
                     }
                 }
